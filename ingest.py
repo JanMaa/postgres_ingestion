@@ -61,7 +61,6 @@ try:
     conn.commit()
 
     # Load data into the table
-    df.drop(df.head(1).index, inplace=True)
     df.to_sql(table_name, engine, if_exists='append', index=False)
 
 except Exception as e:
